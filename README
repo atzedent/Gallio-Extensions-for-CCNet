@@ -1,18 +1,28 @@
-In order to answer Brendan Rice's question (http://groups.google.com/group/ccnet-user/browse_thread/thread/5717d9e8b465b3a0?hl=en).
+In order to answer Brendan Rice's question 
+(http://groups.google.com/group/ccnet-user/browse_thread/thread/5717d9e8b465b3a0?hl=en).
 
 I had the same problem and so decided to branch that specific part of the Gallio sources.
 
 In particular I modified GallioAttachmentBuildAction.cs at line 53:
-origin (http://code.google.com/p/mb-unit/source/browse/branches/v3.1/src/Extensions/CCNet/CCNet.Gallio.WebDashboard.Plugin/GallioAttachmentBuildAction.cs):
-            Build build = buildRetriever.GetBuild(cruiseRequest.BuildSpecifier);
+
+"origin":http://code.google.com/p/mb-unit/source/browse/branches/v3.1/src/Extensions/CCNet/CCNet.Gallio.WebDashboard.Plugin/GallioAttachmentBuildAction.cs:
+
+@Build build = buildRetriever.GetBuild(cruiseRequest.BuildSpecifier);@
+
 modification:
-            Build build = buildRetriever.GetBuild(cruiseRequest.BuildSpecifier, cruiseRequest.RetrieveSessionToken());            
+
+@Build build = buildRetriever.GetBuild(cruiseRequest.BuildSpecifier, cruiseRequest.RetrieveSessionToken());@   
+                     
 
 and GallioAttachmentBuildPlugin.cs line 51:
-origin (http://code.google.com/p/mb-unit/source/browse/branches/v3.1/src/Extensions/CCNet/CCNet.Gallio.WebDashboard.Plugin/GallioAttachmentBuildPlugin.cs):
-            get { throw new NotSupportedException(); }
+
+"origin":http://code.google.com/p/mb-unit/source/browse/branches/v3.1/src/Extensions/CCNet/CCNet.Gallio.WebDashboard.Plugin/GallioAttachmentBuildPlugin.cs:
+
+@get { throw new NotSupportedException(); }@
+
 modification:
-            get { return "Gallio Attachment Build Plugin"; } 
+
+@get { return "Gallio Attachment Build Plugin"; }@
             
 and exchanged the libs
 - NetReflector.dll
@@ -20,4 +30,5 @@ and exchanged the libs
 - ThoughtWorks.CruiseControl.WebDashboard.dll
 with the latest of CruiseControl.NET-1.5.0.6237.
 
-In the Downloads section you will find the compiled CCNet.Gallio.WebDashboard.Plugin.dll which has to be copied to the 'WebDashboard\bin\' directory of CCNet.
+In the Downloads section you will find the compiled CCNet.Gallio.WebDashboard.Plugin.dll which has to be copied to the 
+'WebDashboard\bin\' directory of CCNet.
