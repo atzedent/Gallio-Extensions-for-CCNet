@@ -1,5 +1,5 @@
 In order to answer Brendan Rice's question 
-(http://groups.google.com/group/ccnet-user/browse_thread/thread/5717d9e8b465b3a0?hl=en).
+("http://groups.google.com/group/ccnet-user/browse_thread/thread/5717d9e8b465b3a0?hl=en":http://groups.google.com/group/ccnet-user/browse_thread/thread/5717d9e8b465b3a0?hl=en).
 
 I had the same problem and so decided to branch that specific part of the Gallio sources.
 
